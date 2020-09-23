@@ -10,12 +10,16 @@ import { FormsModule } from '@angular/forms';
 
 // routes
 import { AppRoutesModule } from './app-routes.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
