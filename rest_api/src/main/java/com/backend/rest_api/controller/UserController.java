@@ -6,6 +6,7 @@ import com.backend.rest_api.model.User;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,16 +21,19 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping(path = "/users")
+    @CrossOrigin
     public @ResponseBody List<User> getUsers(){
         return userRepository.findAll();
     }
 
     @GetMapping(path = "/users/{userId}")
+    @CrossOrigin
     public @ResponseBody Optional<User> getUser(@PathVariable("userId") int userId){
         return userRepository.findById(userId);
     }
 
     @PostMapping(path = "/addUser")
+    @CrossOrigin
     public @ResponseBody User postUser(@RequestBody User user){
         userRepository.save(user);
         return user;
