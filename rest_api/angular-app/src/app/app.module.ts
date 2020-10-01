@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 // forms for form dropdowns
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // services
 import { UserService } from './services/user.service';
@@ -29,6 +29,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutesModule
   ],
   providers: [
