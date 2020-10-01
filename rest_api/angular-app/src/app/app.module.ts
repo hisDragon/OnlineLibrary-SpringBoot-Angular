@@ -17,13 +17,15 @@ import { AppRoutesModule } from './app-routes.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { RecommendedBooksComponent } from './inhome/recommended-books/recommended-books.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    RecommendedBooksComponent
   ],
   imports: [
     BrowserModule,
