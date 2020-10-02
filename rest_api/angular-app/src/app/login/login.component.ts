@@ -14,4 +14,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   userModel = new User('','');
+
+  onLogin(): void {
+    console.log('LOGIN!');
+  }
+
+  onRegister(): void {
+    console.log('REGISTER!');
+  }
 }
