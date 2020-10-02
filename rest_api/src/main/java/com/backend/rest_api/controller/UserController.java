@@ -20,18 +20,28 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
+    // getting all users
     @GetMapping(path = "/users")
     @CrossOrigin
     public @ResponseBody List<User> getUsers(){
         return userRepository.findAll();
     }
 
+    // finding users by id
     @GetMapping(path = "/users/{userId}")
     @CrossOrigin
     public @ResponseBody Optional<User> getUser(@PathVariable("userId") int userId){
         return userRepository.findById(userId);
     }
 
+    // finding users by email
+    @GetMapping(path = "/users/email/{userEmail}")
+    @CrossOrigin
+    public @ResponseBody Optional<User> getUser(@PathVariable("userEmail") String userEmail){
+        return userRepository.findByUserEmail(userEmail);
+    }
+
+    // saving user into DB
     @PostMapping(path = "/addUser")
     @CrossOrigin
     public @ResponseBody User postUser(@RequestBody User user){
