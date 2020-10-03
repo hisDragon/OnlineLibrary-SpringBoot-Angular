@@ -19,6 +19,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RecommendedBooksComponent } from './inhome/recommended-books/recommended-books.component';
 
+// @angular/materials
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,8 @@ import { RecommendedBooksComponent } from './inhome/recommended-books/recommende
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutesModule
+    AppRoutesModule,
+    BrowserAnimationsModule
   ],
   providers: [
     UserService
