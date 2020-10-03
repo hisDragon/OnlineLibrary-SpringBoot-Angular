@@ -1,0 +1,20 @@
+.content-grp {
+    background-color: bisque;
+    height: 280px;
+    border-radius: 8px;
+    margin: 30px auto;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display :flex;
+ 
+}
+.img {
+    height : 180px;
+    width : 85%; 
+    margin : 20px;
+    margin-bottom: 10px;
+     
+}
+img:hover {
+    opacity: 0.3;
+}
