@@ -4,7 +4,7 @@
     </div>
 </div>
 
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" fullscreen >
     <mat-toolbar-row >
       <button mat-icon-button>
         <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
@@ -27,6 +27,7 @@
 <mat-sidenav #sidenav>
   <mat-nav-list>
 
+    <a mat-list-item [routerLink]="'/'"> Home </a>
     <a mat-list-item [routerLink]="'/about'"> About </a>
     <a mat-list-item [routerLink]="'/blog'"> Blog </a>
     <a mat-list-item [routerLink]="'/social-media'"> Social Media </a>
@@ -37,10 +38,10 @@
   </mat-nav-list>
 </mat-sidenav>
 <mat-sidenav-content>
-  <div style="height: 88vh;">
+  <div style="height: 85vh;"> <!-- change height if you need no scroll for a single component -->
 
-    <!-- <router-outlet></router-outlet> -->
-    <app-recommended-books></app-recommended-books>
+    <router-outlet></router-outlet>
+
   </div>
 </mat-sidenav-content>
 </mat-sidenav-container>
