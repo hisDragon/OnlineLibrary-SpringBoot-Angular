@@ -12,16 +12,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // services
 import { UserService } from './services/user.service';
 
-// routes
+// routes module
 import { AppRoutesModule } from './app-routes.module';
+
+// components
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/home.component'; // sub-components ▼
+  import { CategoryComponent } from './inhome/category/category.component';
+  import { RecommendedBooksComponent } from './inhome/recommended-books/recommended-books.component';
 import { LoginComponent } from './login/login.component';
-import { RecommendedBooksComponent } from './inhome/recommended-books/recommended-books.component';
+import { AboutComponent } from './about/about.component';
 
 // @angular/materials
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,10 @@ import { MaterialModule } from './material/material.module';
     LoginComponent,
     NavbarComponent,
     HomeComponent,
-    RecommendedBooksComponent
+    RecommendedBooksComponent,
+    AboutComponent,
+    CategoryComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
