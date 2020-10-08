@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+body{
+	margin:0;
+	padding:0;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.container{
+	max-width:1140px;
+	margin:auto;
+	position: relative;
+	min-height: 1px;
+}
+
+.team{
+	min-height: 94.4vh;
+	padding:60px 15px;
+    background-color:rgba(218, 213, 213, 0.959); 
+	float: left;
+	width: 100%;
+}
+.team h1{
+	font-size: 36px;
+	font-family: open sans;
+	font-weight: 700;
+	color:#10075ee7;
+	margin:0;
+	font: bold;
+	text-shadow: rgb(166, 243, 243);
+	padding-bottom:10px;
+	text-align: center;
+}.team h2{
+	font-size: 36px;
+	margin-top: auto;
+	color: rgb(231, 73, 45);
+	
+	text-align: center;
+}
+.team h3{
+	font-size: 20px;
+	color: rgb(14, 14, 14);
+	margin-left: 20px;
+	
+}
+.team .card{
+	width:25%;
+	float: left;
+	padding:10px 15px;
+	margin: 45px;
+}
+.team .card .box {
+	padding:15px;
+	background-color: #88633bcb;
+	border-radius:5px;
+	transition: margin 1s ease,box-shadow 1s ease;
+}
+.team .card .box:hover{
+	margin-top:-15px;
+	box-shadow:0px 0px 30px rgb(52, 59, 46);
+}
+.team .card .box img{
+	width:150px;
+	display: block;
+	margin:10px auto;
+	border-radius:50%;
+
+}
+
+.team .card .box h4{
+	font-size: 20px;
+	font-family: open sans;
+	margin:20px 0px 10px;
+	color:#19e6ca;
+	text-align: center;
+	font-weight: 700;
+}
+
+.team .card .box h5{
+	font-size:16px;
+	font-family: open sans;
+	font-weight: 600;
+	color:#ddcf0f;
+	margin:0px 0px 15px;
+	text-align: center;
+}
+.team .card .box p{
+	color:#f0f8f0;
+	font-size: 15px;
+	font-family: open sans;
+	font-weight: 400;
+	line-height: 24px;
+	text-align: center;
+	padding:0px 20px;
+}
+
+.footer-bottom{
+    width: 99.8%;
+    height: auto;
+    margin: auto;
+    background: #2e5cb3;
+    padding: 5.4px;
+    }
+    .footer-bottom{
+    font-family: arial;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    Letter-spacing: 1px;
+    }
+    .footer-bottom p a{
+    color: #fff;
+    }
+    
+/*responsive*/
+
+@media(max-width: 991px){
+	.team .card{
+		width:50%;
+		margin-bottom:30px;
+	}
+}
+
+@media(max-width:550px){
+	.team .card{
+		width:100%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
