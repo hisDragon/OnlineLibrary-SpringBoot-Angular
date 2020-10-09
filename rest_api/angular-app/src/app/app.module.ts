@@ -22,11 +22,15 @@ import { HomeComponent } from './home/home.component'; // sub-components ▼
   import { RecommendedBooksComponent } from './inhome/recommended-books/recommended-books.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
+import { PathNotFoundComponent } from './path-not-found/path-not-found.component'; // page/path not found
 
 // @angular/materials
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FooterComponent } from './footer/footer.component';
+
+// MDBBootstrapMaterials
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,8 @@ import { FooterComponent } from './footer/footer.component';
     RecommendedBooksComponent,
     AboutComponent,
     CategoryComponent,
-    FooterComponent
+    FooterComponent,
+    PathNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,8 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     AppRoutesModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     UserService

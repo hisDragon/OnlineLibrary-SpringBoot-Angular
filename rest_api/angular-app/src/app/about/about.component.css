@@ -54,7 +54,7 @@ body{
 }
 .team .card .box {
 	padding:15px;
-	background-color: #88633bcb;
+	background-color: #7B1FA2;
 	border-radius:5px;
 	transition: margin 1s ease,box-shadow 1s ease;
 }
