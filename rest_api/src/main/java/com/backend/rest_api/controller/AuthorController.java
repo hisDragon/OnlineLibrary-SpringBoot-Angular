@@ -1,9 +1,10 @@
 package com.backend.rest_api.controller;
 
-import com.backend.rest_api.model.User;
-import com.backend.rest_api.service.UserService;
+import java.util.List;
+import java.util.Optional;
 
-import java.util.*;
+import com.backend.rest_api.model.Author;
+import com.backend.rest_api.service.AuthorService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,43 +16,40 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class UserController {
+public class AuthorController {
     
     @Autowired
-    private UserService userService;
+    private AuthorService authorService;
 
     //////////////////////////////// GET ////////////////////////////////
 
-    // getting all users
-    @GetMapping(path = "/users/all")
+    @GetMapping(path = "/authors/all")
     @CrossOrigin
-    public @ResponseBody List<User> getUsers(){
-        return this.userService.getUsers();
+    public @ResponseBody List<Author> getAuthors(){
+        return this.authorService.getAuthors();
     }
 
-    // finding users by id
-    @GetMapping(path = "/users/{userId}")
+    @GetMapping(path = "/authors/{authorId}")
     @CrossOrigin
-    public @ResponseBody Optional<User> getUser(@PathVariable("userId") int userId){
-        return this.userService.getUserById(userId);
+    public @ResponseBody Optional<Author> getAuthor(@PathVariable("authorId") int authorId){
+        return this.authorService.getAuthorById(authorId);
     }
 
-    // finding users by email
-    @GetMapping(path = "/users/email/{userEmail}")
+    @GetMapping(path = "/authors/{authorName}")
     @CrossOrigin
-    public @ResponseBody Optional<User> getUser(@PathVariable("userEmail") String userEmail){
-        return this.userService.getUserByEmail(userEmail);
+    public @ResponseBody Optional<Author> getAuthor(@PathVariable("authorName") String authorName){
+        return this.authorService.getAuthorByName(authorName);
     }
 
     ////////////////////////////// GET END //////////////////////////////
 
+
     /////////////////////////////// POST ////////////////////////////////
 
-    // saving user into DB
-    @PostMapping(path = "/users/addUser")
+    @PostMapping(path = "/authors/addAuthor")
     @CrossOrigin
-    public @ResponseBody User postUser(@RequestBody User user){
-        return this.userService.saveUser(user);
+    public @ResponseBody Author postBook(@RequestBody Author author){
+        return this.authorService.saveAuthor(author);
     }
 
     ///////////////////////////// POST END //////////////////////////////
@@ -65,4 +63,5 @@ public class UserController {
     ////////////////////////////// DELETE ///////////////////////////////
 
     //////////////////////////// DELETE END /////////////////////////////
+
 }

@@ -19,7 +19,7 @@ export class UserService {
 
   // getting all users
   getUsers(): Observable<IUser> {
-    let get_url = this._url + 'users/';
+    let get_url = this._url + 'users/all/';
     return this.http.get<IUser>(get_url);
   }
 
@@ -31,7 +31,7 @@ export class UserService {
 
   // posting user to backend rest api
   postUsers(requestBody): Observable<any> {
-    let post_url = this._url + 'addUser/';
+    let post_url = this._url + 'users/addUser/';
 
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',

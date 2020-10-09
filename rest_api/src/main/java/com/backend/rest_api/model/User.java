@@ -2,8 +2,6 @@ package com.backend.rest_api.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,9 +10,8 @@ import javax.persistence.Table;
 public class User {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "userId")
-    private int userId; // primary key
+    private int userId; // **6-DIGIT** PRIMARY KEY
 
     @Column(name = "userName")
     private String userName;
@@ -25,7 +22,7 @@ public class User {
     @Column(name = "userAvatar")
     private String userAvatar;
 
-    @Column(name = "userEmail")
+    @Column(name = "userEmail", unique = true)
     private String userEmail;
 
     @Column(name = "userPassword")
@@ -33,7 +30,7 @@ public class User {
 
     public User(){} // default constructor
 
-    // constructor for direct init
+    // parameterised constructor
     public User(
         int userId, String userName, String userPhone, String userAvatar,String userEmail, String userPassword
     ){
