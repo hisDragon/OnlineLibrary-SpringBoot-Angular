@@ -1,13 +1,24 @@
 package com.backend.rest_api.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+
 @Entity
+@JsonIdentityInfo(
+    generator = ObjectIdGenerators.PropertyGenerator.class,
+    property = "authorId"
+)
 public class Author {
     
     @Id
@@ -17,8 +28,8 @@ public class Author {
     @Column(name = "authorName", unique = true)
     private String authorName;
 
-    @ManyToMany(mappedBy = "authors")
-    private List<Book> books;
+    @ManyToMany( targetEntity = Book.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY , mappedBy = "authors")
+    private List<Book> books = new ArrayList<>();
 
     public Author() {} // default constructor
 

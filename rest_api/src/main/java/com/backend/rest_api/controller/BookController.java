@@ -3,6 +3,7 @@ package com.backend.rest_api.controller;
 import java.util.List;
 import java.util.Optional;
 
+
 import com.backend.rest_api.model.Book;
 import com.backend.rest_api.service.BookService;
 
@@ -46,7 +47,7 @@ public class BookController {
 
     /////////////////////////////// POST ////////////////////////////////
 
-    @PostMapping(path = "/books/addBook")
+    @PostMapping(path = "/books/addBook", consumes = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
     @CrossOrigin
     public @ResponseBody Book postBook(@RequestBody Book book){
         return this.bookService.saveBook(book);

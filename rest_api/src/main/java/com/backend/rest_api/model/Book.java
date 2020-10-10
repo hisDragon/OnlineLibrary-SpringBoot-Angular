@@ -1,16 +1,26 @@
 package com.backend.rest_api.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+
 @Entity
+@JsonIdentityInfo(
+    generator = ObjectIdGenerators.PropertyGenerator.class,
+    property = "bookId"
+)
 public class Book {
     
     @Id
@@ -29,11 +39,11 @@ public class Book {
     @Column(name = "bookCategory")
     private String bookCategory;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany( targetEntity = Author.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY )
     @JoinTable(joinColumns = { @JoinColumn(name = "bookId") },
                 inverseJoinColumns = { @JoinColumn(name = "authorId") }
             )
-    private List<Author> authors;
+    private List<Author> authors = new ArrayList<>();
 
     public Book() {} // default constructor
 
@@ -50,12 +60,13 @@ public class Book {
 
     // parameterised constructor
     public Book(
-        int bookId, String bookName, String bookPath, String bookImagePath, List<Author> authors
+        int bookId, String bookName, String bookPath, String bookImagePath, String bookCategory, List<Author> authors
     ){
         this.bookId = bookId;
         this.bookName = bookName;
         this.bookPath = bookPath;
         this.bookImagePath = bookImagePath;
+        this.bookCategory = bookCategory;
         this.authors = authors;
     }
 
