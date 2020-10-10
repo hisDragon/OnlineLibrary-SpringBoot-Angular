@@ -3,6 +3,7 @@
     height: 280px;
     border-radius: 8px;
     margin: 30px auto;
+    margin-top: 0%;
     overflow-y: hidden;
     overflow-x: scroll;
     display :flex;

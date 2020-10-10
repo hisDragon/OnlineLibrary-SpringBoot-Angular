@@ -1,0 +1,46 @@
+.content-grp {
+    background-color: bisque;
+    
+    border-radius: 8px;
+    margin: 30px auto;
+    margin-top: 0%;
+    display :flex;
+ 
+}
+.content {
+    background-color: bisque;    
+    border-radius: 8px;
+    margin: 30px auto;
+    margin-top: 0%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display :flex;
+ 
+}
+.content-item {
+    background-color: cornsilk;
+    border-radius: 8px;
+   
+    margin: 20px;
+    padding: 10px;
+}
+
+.img {
+    height : 180px;
+    width : 85%; 
+    margin : 20px;
+    margin-bottom: 10px;
+}
+img:hover {
+    opacity: 0.3;
+}
+.content-display {
+    background-color: bisque;
+    height: 280px;
+    border-radius: 8px;
+    margin: 30px auto;
+    margin-top: 0%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display :flex;
+}
