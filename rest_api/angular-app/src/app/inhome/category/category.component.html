@@ -1,1 +1,127 @@
-<p>category works!</p>
+<h5>Category</h5>
+<div class="content-grp">
+       <div class="content-item">
+            <button class="btn" (click) = "historyVisible()">
+                <img src="../../../assets/images/history.jpg" style="height:60px; width: 60px;">
+                <h5>History</h5>
+            </button>
+       </div>  
+       
+       <div class="content-item" >
+            <button class="btn" (click) = "artVisible()">
+                <img src="../../../assets/images/art.jpg" style="height:60px; width: 60px;">
+                <h5>Art</h5>
+            </button>
+        </div>  
+        <div class="content-item">
+            <button class="btn" (click) = "geographyVisible()">
+                <img src="../../../assets/images/geo.jpg" style="height:60px; width: 60px;">
+                <h5>GeoGraphy</h5>
+            </button>
+        </div>  
+        <div class="content-item">
+            <button class="btn" (click) = "romanceVisible()">
+                <img src="../../../assets/images/romance.jpg" style="height:60px; width: 60px;">
+                <h5>Romance</h5>
+             </button>
+        </div>  
+        <div class="content-item">
+            <button class="btn" (click) = "scienceVisible()">
+                <img src="../../../assets/images/science.jpg" style="height:60px; width: 60px;">
+                <h5>Science</h5>
+            </button>
+        </div>  
+        <div class="content-item">
+            <button class="btn" (click) = "novelVisible()">
+                <img src="../../../assets/images/novels.jpg" style="height:60px; width: 60px;">
+                <h5>Novels</h5>
+            </button>
+        </div> 
+        <div class="content-item">
+            <button class="btn" (click) = "socialVisible()">
+                <img src="../../../assets/images/social.jpg" style="height:60px; width: 60px;">
+                <h5>Social</h5>
+            </button>
+        </div> 
+
+</div>
+
+
+<div class="in-line" *ngIf="isArtVisible">
+   
+        <h5 style="margin-bottom: 0px;">Art</h5>
+    <div class="content-display">        
+            <div *ngFor="let book of art_books; let indexOfelement=index"> 
+                              
+                <img class="img" src="{{book.img_path}}">
+                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+            </div> 
+    </div>
+</div>
+
+<div class="in-line" *ngIf="isRomanceVisible">
+    <h5 style="margin-bottom: 0px;">Romance</h5>
+    <div class="content-display">        
+            <div *ngFor="let book of romance_books; let indexOfelement=index"  > 
+                              
+                <img class="img" src="{{book.img_path}}">
+                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+            </div> 
+    </div>
+</div>
+
+<div class="in-line" *ngIf="isSocialVisible">
+    <h5 style="margin-bottom: 0px;">Social</h5>
+    <div class="content-display">        
+            <div *ngFor="let book of social_books; let indexOfelement=index"  > 
+                              
+                <img class="img" src="{{book.img_path}}">
+                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+            </div> 
+    </div>
+</div>
+
+<div class="in-line" *ngIf="isScienceVisible">
+    <h5 style="margin-bottom: 0px;">Science</h5>
+    <div class="content-display">        
+            <div *ngFor="let book of science_books; let indexOfelement=index"  > 
+                              
+                <img class="img" src="{{book.img_path}}">
+                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+            </div> 
+    </div>
+</div>
+
+<div class="in-line" *ngIf="isNovelVisible">
+    <h5 style="margin-bottom: 0px;">Novels</h5>
+    <div class="content-display">        
+            <div *ngFor="let book of novel_books; let indexOfelement=index"  > 
+                              
+                <img class="img" src="{{book.img_path}}">
+                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+            </div> 
+    </div>
+</div>
+
+<div class="in-line" *ngIf="isGeographyVisible">
+    <h5 style="margin-bottom: 0px;">GeoGraphy</h5>
+    <div class="content-display">        
+            <div *ngFor="let book of geography_books; let indexOfelement=index"  > 
+                              
+                <img class="img" src="{{book.img_path}}">
+                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+            </div> 
+    </div>
+</div>
+
+<div class="in-line" *ngIf="isHistoryVisible">
+    <h5 style="margin-bottom: 0px;">History</h5>
+    <div class="content-display">        
+            <div *ngFor="let book of history_books; let indexOfelement=index"  > 
+                              
+                <img class="img" src="{{book.img_path}}">
+                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+            </div> 
+    </div>
+</div>
+
