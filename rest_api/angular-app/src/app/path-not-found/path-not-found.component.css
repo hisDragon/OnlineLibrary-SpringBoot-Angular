@@ -1,4 +1,4 @@
-
+/* 
 @import "https://fonts.googleapis.com/css?family=VT323";
 body,
 h1,
@@ -66,11 +66,12 @@ body {
 .bsod .nav .link:hover, .bsod .nav .link:focus {
   background: #aaaaaa;
   color: #0414a7;
-}
+} */
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
 
 
-
-/* body {
+body {
   color:#eee;
   font-size:26px;
   width:100vw;
@@ -197,4 +198,4 @@ cursor:default;
   
   transform: translate(-51%,-51%);
   transition: all 0.3s ease-in-out;
-} */
+}
