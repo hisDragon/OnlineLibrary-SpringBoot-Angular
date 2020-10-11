@@ -30,13 +30,13 @@ public class BookController {
         return this.bookService.getBooks();
     }
 
-    @GetMapping(path = "/books/{bookId}")
+    @GetMapping(path = "/books/id/{bookId}")
     @CrossOrigin
     public @ResponseBody Optional<Book> getBook(@PathVariable("bookId") int bookId ){
         return this.bookService.getBookById(bookId);
     }
 
-    @GetMapping(path = "/books/{bookName}")
+    @GetMapping(path = "/books/name/{bookName}")
     @CrossOrigin
     public @ResponseBody Optional<Book> getBook(@PathVariable("bookName") String bookName ){
         return this.bookService.getBookByName(bookName);

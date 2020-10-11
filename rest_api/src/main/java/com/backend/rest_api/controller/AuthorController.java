@@ -29,13 +29,13 @@ public class AuthorController {
         return this.authorService.getAuthors();
     }
 
-    @GetMapping(path = "/authors/{authorId}")
+    @GetMapping(path = "/authors/id/{authorId}")
     @CrossOrigin
     public @ResponseBody Optional<Author> getAuthor(@PathVariable("authorId") int authorId){
         return this.authorService.getAuthorById(authorId);
     }
 
-    @GetMapping(path = "/authors/{authorName}")
+    @GetMapping(path = "/authors/name/{authorName}")
     @CrossOrigin
     public @ResponseBody Optional<Author> getAuthor(@PathVariable("authorName") String authorName){
         return this.authorService.getAuthorByName(authorName);
