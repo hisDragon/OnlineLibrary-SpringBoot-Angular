@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // services
 import { UserService } from './services/user.service';
+import { BookService } from './services/book.service';
 
 // routes module
 import { AppRoutesModule } from './app-routes.module';
@@ -55,7 +56,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     MDBBootstrapModule.forRoot()
   ],
   providers: [
-    UserService
+    UserService,
+    BookService
   ],
   bootstrap: [AppComponent]
 })

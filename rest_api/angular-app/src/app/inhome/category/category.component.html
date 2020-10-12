@@ -49,79 +49,79 @@
 
 <div class="in-line" *ngIf="isArtVisible">
    
-        <h5 style="margin-bottom: 0px;">Art</h5>
+    <h5 style="margin-bottom: 0px;">Art</h5>
     <div class="content-display">        
-            <div *ngFor="let book of art_books; let indexOfelement=index"> 
-                              
-                <img class="img" src="{{book.img_path}}">
-                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
-            </div> 
+        <div *ngFor="let book of books; let indexOfelement=index"> 
+                            
+            <img class="img" [src]="book.bookImagePath">
+            <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+        </div> 
     </div>
 </div>
 
 <div class="in-line" *ngIf="isRomanceVisible">
     <h5 style="margin-bottom: 0px;">Romance</h5>
     <div class="content-display">        
-            <div *ngFor="let book of romance_books; let indexOfelement=index"  > 
-                              
-                <img class="img" src="{{book.img_path}}">
-                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
-            </div> 
+        <div *ngFor="let book of books; let indexOfelement=index"  > 
+                            
+            <img class="img" [src]="book.bookImagePath">
+            <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+        </div> 
     </div>
 </div>
 
 <div class="in-line" *ngIf="isSocialVisible">
     <h5 style="margin-bottom: 0px;">Social</h5>
     <div class="content-display">        
-            <div *ngFor="let book of social_books; let indexOfelement=index"  > 
-                              
-                <img class="img" src="{{book.img_path}}">
-                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
-            </div> 
+        <div *ngFor="let book of books; let indexOfelement=index"  > 
+                            
+            <img class="img" [src]="book.bookImagePath">
+            <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+        </div> 
     </div>
 </div>
 
 <div class="in-line" *ngIf="isScienceVisible">
     <h5 style="margin-bottom: 0px;">Science</h5>
     <div class="content-display">        
-            <div *ngFor="let book of science_books; let indexOfelement=index"  > 
-                              
-                <img class="img" src="{{book.img_path}}">
-                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
-            </div> 
+        <div *ngFor="let book of books; let indexOfelement=index"  > 
+                            
+            <img class="img" [src]="book.bookImagePath">
+            <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+        </div> 
     </div>
 </div>
 
 <div class="in-line" *ngIf="isNovelVisible">
     <h5 style="margin-bottom: 0px;">Novels</h5>
     <div class="content-display">        
-            <div *ngFor="let book of novel_books; let indexOfelement=index"  > 
-                              
-                <img class="img" src="{{book.img_path}}">
-                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
-            </div> 
+        <div *ngFor="let book of books; let indexOfelement=index"  > 
+                            
+            <img class="img" [src]="book.bookImagePath">
+            <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+        </div> 
     </div>
 </div>
 
 <div class="in-line" *ngIf="isGeographyVisible">
     <h5 style="margin-bottom: 0px;">GeoGraphy</h5>
     <div class="content-display">        
-            <div *ngFor="let book of geography_books; let indexOfelement=index"  > 
-                              
-                <img class="img" src="{{book.img_path}}">
-                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
-            </div> 
+        <div *ngFor="let book of books; let indexOfelement=index"  > 
+                            
+            <img class="img" [src]="book.bookImagePath">
+            <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+        </div> 
     </div>
 </div>
 
 <div class="in-line" *ngIf="isHistoryVisible">
     <h5 style="margin-bottom: 0px;">History</h5>
     <div class="content-display">        
-            <div *ngFor="let book of history_books; let indexOfelement=index"  > 
-                              
-                <img class="img" src="{{book.img_path}}">
-                <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
-            </div> 
+        <div *ngFor="let book of books; let indexOfelement=index"  > 
+                            
+            <img class="img" [src]="book.bookImagePath">
+            <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)" type="button" style="align-self: center; margin-left: 20px; padding-left: 40px; padding-right: 40px;">Open</button>
+        </div> 
     </div>
 </div>
 

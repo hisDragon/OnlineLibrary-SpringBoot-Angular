@@ -1,5 +1,6 @@
 package com.backend.rest_api.dao;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.backend.rest_api.model.Book;
@@ -10,4 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Integer>{
     public Optional<Book> findByBookName(String bookName); // for adding authors without requiring bookId
+    public List<Book> findByBookCategory(String bookCategory); // sorting by category in front-end
 }

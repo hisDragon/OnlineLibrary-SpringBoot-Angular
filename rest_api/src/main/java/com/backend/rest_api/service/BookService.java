@@ -17,6 +17,7 @@ interface IBookService{
     public abstract List<Book> getBooks();
     public abstract Optional<Book> getBookById(int bookId);
     public abstract Optional<Book> getBookByName(String bookName);
+    public abstract List<Book> getBooksByCategory(String bookCategory);
 
     public abstract Book saveBook(Book book);
     // public abstract Book saveBook(Book book, Author author);
@@ -46,6 +47,11 @@ public class BookService implements IBookService {
     @Override
     public Optional<Book> getBookByName(String bookName){
         return this.bookRepository.findByBookName(bookName);
+    }
+
+    @Override
+    public List<Book> getBooksByCategory(String bookCategory){
+        return this.bookRepository.findByBookCategory(bookCategory);
     }
 
     // method to generate random integer for primary key

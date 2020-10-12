@@ -42,6 +42,12 @@ public class BookController {
         return this.bookService.getBookByName(bookName);
     }
 
+    @GetMapping(path = "/books/category/{bookCategory}")
+    @CrossOrigin
+    public @ResponseBody List<Book> getBooksByCategory(@PathVariable("bookCategory") String bookCategory){
+        return this.bookService.getBooksByCategory(bookCategory);
+    }
+
     ////////////////////////////// GET END //////////////////////////////
 
 
