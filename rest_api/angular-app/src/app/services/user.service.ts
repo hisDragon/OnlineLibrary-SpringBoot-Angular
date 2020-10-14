@@ -12,26 +12,29 @@ import { IUser } from '../models/IUser';
 })
 export class UserService {
 
+  isLoggedIn: boolean = false;
+  userInfo: IUser;
+
   // backend rest api
-  private _url: string = "http://localhost:8080/";
+  private _url: string = "http://localhost:8080/users/";
 
   constructor(private http: HttpClient) { }
 
   // getting all users
   getUsers(): Observable<IUser> {
-    let get_url = this._url + 'users/all/';
+    let get_url = this._url + 'all/';
     return this.http.get<IUser>(get_url);
   }
 
   // getting users by email
   getByEmail(email: string): Observable<IUser> {
-    let getByEmail_url = this._url + 'users/email/' + email;
+    let getByEmail_url = this._url + 'email/' + email;
     return this.http.get<IUser>(getByEmail_url);
   }
 
   // posting user to backend rest api
   postUsers(requestBody): Observable<any> {
-    let post_url = this._url + 'users/addUser/';
+    let post_url = this._url + 'addUser/';
 
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',

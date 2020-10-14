@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IUser } from '../models/IUser';
 import { UserService } from '../services/user.service';
-import { User } from './user';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +11,10 @@ import { User } from './user';
 export class LoginComponent implements OnInit {
   public password_set :string="";
   public password_confirm :string="";
-  userModel = new User('','');
 
   // injecting/autowiring service dependency
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,11 +29,21 @@ export class LoginComponent implements OnInit {
     this.userService.getByEmail(mail).subscribe(
       user => {
         if(user && user.userPassword === pwd) {
-          alert('welcome ' + user.userName);
+          this.userService.isLoggedIn = true; // user is now logged in
+          this.userService.userInfo = user; // for info of the user usage in other components
+          this.router.navigate(['/dashboard']);
         }
-        else alert('Incorrect email/password');
+        else {
+          alert('Incorrect email/password');
+          this.userService.isLoggedIn = false;
+          this.userService.userInfo = null;
+        }
       },
-      error => console.log(error)
+      error => {
+        console.log(error);
+        this.userService.isLoggedIn = false;
+        this.userService.userInfo = null;
+      }
     );
 
   }
@@ -60,8 +70,18 @@ export class LoginComponent implements OnInit {
     function replacer(key, value){if (ignoreList.indexOf(key) > -1) return undefined;else return value;}
     let data = JSON.stringify(this.registerState, replacer);
 
-    this.userService.postUsers(data).subscribe(user => console.log(user), error => console.log(error));
-    alert('added ' + this.registerState.userName + ' to the database');
+    this.userService.postUsers(data).subscribe(
+      user => {
+        this.userService.isLoggedIn = true;
+        this.userService.userInfo = user;
+        this.router.navigate(['/dashboard']);
+      },
+      error => {
+        console.log(error);
+        this.userService.isLoggedIn = false;
+        this.userService.userInfo = null;
+      }
+    );
     
   }
 

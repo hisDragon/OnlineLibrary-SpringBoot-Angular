@@ -15,7 +15,10 @@
       <div class="login-class">
         
         <!-- <a mat-button [routerLink]="'/create-activity'"> Create Activity </a> -->
-        <a mat-raised-button color="warn" style="text-decoration: none; " data-target="#loginmodal" data-toggle="modal" >Login/Register</a>
+        <a mat-raised-button color="warn" style="text-decoration: none; " *ngIf="!isLoggedIn" data-target="#loginmodal" data-toggle="modal" >Login/Register</a>
+
+        <!-- logout button -->
+        <a mat-raised-button color="warn" style="text-decoration: none;" *ngIf="isLoggedIn" >Logout</a>
       
       </div>
 
@@ -34,6 +37,7 @@
   <mat-nav-list>
 
     <a mat-list-item [routerLink]="'/'" style="padding-right: 80px;" > Home </a>
+    <a mat-list-item [routerLink]="'/dashboard'">Dashboard</a>
     <a mat-list-item [routerLink]="'/about'"> About </a>
     <a mat-list-item [routerLink]="'/blog'"> Blog </a>
 

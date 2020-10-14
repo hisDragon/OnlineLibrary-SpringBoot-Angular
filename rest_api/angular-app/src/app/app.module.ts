@@ -9,9 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 // forms for form dropdowns
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-// services
+// guards and services
 import { UserService } from './services/user.service';
 import { BookService } from './services/book.service';
+import { AuthGuard } from './services/auth-guard.guard';
 
 // routes module
 import { AppRoutesModule } from './app-routes.module';
@@ -21,6 +22,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component'; // sub-components ▼
   import { CategoryComponent } from './inhome/category/category.component';
   import { RecommendedBooksComponent } from './inhome/recommended-books/recommended-books.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { PathNotFoundComponent } from './path-not-found/path-not-found.component'; // page/path not found
@@ -43,7 +45,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     AboutComponent,
     CategoryComponent,
     FooterComponent,
-    PathNotFoundComponent
+    PathNotFoundComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
   ],
   providers: [
     UserService,
-    BookService
+    BookService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

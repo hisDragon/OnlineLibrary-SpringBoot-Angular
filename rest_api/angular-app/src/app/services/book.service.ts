@@ -10,18 +10,18 @@ import { IBook } from '../models/IBook';
 })
 export class BookService {
 
-  private _url: string = "http://localhost:8080/"; // url for backend rest api
+  private _url: string = "http://localhost:8080/books/"; // url for backend rest api
 
   // http client dependency
   constructor(private httpClient: HttpClient) { }
 
   getBooks(): Observable<IBook[]> {
-    let get_url = this._url + "books/all";
+    let get_url = this._url + "all/";
     return this.httpClient.get<IBook[]>(get_url);
   }
 
   getBooksByCategory(category: string): Observable<IBook[]> {
-    let getByCategory_url = this._url + "books/category/" + category;
+    let getByCategory_url = this._url + "category/" + category;
     return this.httpClient.get<IBook[]>(getByCategory_url);
   }
 
