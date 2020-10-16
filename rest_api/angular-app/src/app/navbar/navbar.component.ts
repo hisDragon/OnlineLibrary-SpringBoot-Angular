@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -8,11 +9,16 @@ import { UserService } from '../services/user.service';
 })
 export class NavbarComponent implements OnInit {
 
-  isLoggedIn: boolean = this.userService.isLoggedIn;
+  constructor(public userService: UserService, private router: Router) { }
 
-  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+  }
+
+  onLogout(): void{
+    this.userService.isLoggedIn = false;
+    this.userService.userInfo = null;
+    this.router.navigate(['']);
   }
 
 }

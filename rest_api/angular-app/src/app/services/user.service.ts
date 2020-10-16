@@ -12,8 +12,16 @@ import { IUser } from '../models/IUser';
 })
 export class UserService {
 
-  isLoggedIn: boolean = false;
+  private _isLoggedIn: boolean = false;
   userInfo: IUser;
+
+  get isLoggedIn(): boolean{
+    return !!this._isLoggedIn;
+  }
+
+  set isLoggedIn(value: boolean){
+    this._isLoggedIn = value;
+  }
 
   // backend rest api
   private _url: string = "http://localhost:8080/users/";

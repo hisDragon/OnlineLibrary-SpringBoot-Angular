@@ -23,7 +23,9 @@ import { HomeComponent } from './home/home.component'; // sub-components ▼
   import { CategoryComponent } from './inhome/category/category.component';
   import { RecommendedBooksComponent } from './inhome/recommended-books/recommended-books.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
+// auth ▼
+  import { LoginComponent } from './auth/login/login.component';
+  import { RegisterComponent } from './auth/register/register.component';
 import { AboutComponent } from './about/about.component';
 import { PathNotFoundComponent } from './path-not-found/path-not-found.component'; // page/path not found
 
@@ -34,6 +36,7 @@ import { FooterComponent } from './footer/footer.component';
 
 // MDBBootstrapMaterials
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     CategoryComponent,
     FooterComponent,
     PathNotFoundComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

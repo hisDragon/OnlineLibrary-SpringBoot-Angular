@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <div class="jumbotron">
+                <h2>Register</h2><br>
+                <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
+
+                    <!-- First Name -->
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text"  class="form-control" formControlName="firstName" [ngClass]="{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}" required />
+                        <div class="invalid-feedback">
+                            <div>First Name is required</div>
+                        </div>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" formControlName="lastName" [ngClass]="{'is-invalid':form.get('lastName').touched && form.get('lastName').invalid}" required />
+                        <div class="invalid-feedback">
+                            <div>Last Name is required</div>
+                        </div>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control" formControlName="phone" [ngClass]="{ 'is-invalid':form.get('phone').touched && form.get('phone').invalid }" required >
+                        <div *ngIf="form.get('phone').touched && form.get('phone').invalid" class="invalid-feedback">
+                            <div *ngIf="form.get('phone').errors.required" >Phone Number Required</div>
+                            <div *ngIf="form.get('phone').hasError('pattern')" >Invalid Phone Number</div>
+                            <div *ngIf="form.get('phone').errors.minLength" >Invalid Phone Number</div>
+                            <div *ngIf="form.get('phone').errors.maxLength" >Invalid Phone Number</div>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid':form.get('email').touched && form.get('email').invalid}"   />
+                        <div *ngIf="form.get('email').touched && form.get('email').invalid"  class="invalid-feedback">
+                            <div *ngIf="form.get('email').errors.required">Email is required</div>
+                            <div *ngIf="form.get('email').errors.email">Must be a valid Email Address</div>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control"  formControlName="password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}" />
+                        <div *ngIf="form.get('password').touched && form.get('password').invalid"  class="invalid-feedback">
+                            <div *ngIf="form.get('password').errors.required">Password is required</div>
+                            <div *ngIf="form.get('password').errors.minlength">Password  must be at least 8 charaters</div>
+                        </div>
+                    </div>
+
+                    <!-- Buttot for Registering -->
+                    <div class="form-group">
+                        <button class="btn btn-primary"  [disabled]="!form.valid">Register</button>
+                    </div>
+
+                    <div>
+                        <p>Do you already have an account? <a [routerLink]="'/login'">Login</a></p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
