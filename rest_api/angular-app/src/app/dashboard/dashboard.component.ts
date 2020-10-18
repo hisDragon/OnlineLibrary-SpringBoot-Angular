@@ -9,6 +9,9 @@ import { UserService } from '../services/user.service';
 export class DashboardComponent implements OnInit {
 
   userName: string = this.userService.userInfo.userName;
+  userPhone: string = this.userService.userInfo.userPhone;
+  userEmail: string = this.userService.userInfo.userEmail;
+  userId: number = this.userService.userInfo.userId;
 
   constructor(private userService : UserService) { }
 
