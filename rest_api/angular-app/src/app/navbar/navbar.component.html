@@ -10,6 +10,7 @@
         
         <!-- <a mat-button [routerLink]="'/create-activity'"> Create Activity </a> -->
         <a mat-raised-button color="warn" style="text-decoration: none; margin-right: 20px;" *ngIf="!this.userService.isLoggedIn" [routerLink]="'/login'" >login</a>
+        
         <a mat-raised-button color="warn" style="text-decoration: none;" *ngIf="!this.userService.isLoggedIn" [routerLink]="'/register'" >Register</a>
 
         <!-- logout button -->
