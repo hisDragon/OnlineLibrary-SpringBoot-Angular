@@ -1,1 +1,7 @@
-<h2>Hi {{userName}}</h2>
+<button mdbBtn color="primary" class="waves-light" type="button" (click)="test.toggle()" mdbWavesEffect>
+    Add Book?
+</button>
+
+<div class="" mdbCollapse #test="bs-collapse">
+    <app-add-book></app-add-book>
+</div>
