@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
 
     this.userService.getByEmail(mail).subscribe(
       user => {
-        if(user && user.userPassword === pwd) {
+        if(user !== null && user.userPassword === pwd) {
           this.userService.isLoggedIn = true; // user is now logged in
           this.userService.userInfo = user; // for info of the user usage in other components
           this.router.navigate(['/dashboard']);

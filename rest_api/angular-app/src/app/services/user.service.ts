@@ -36,7 +36,7 @@ export class UserService {
 
   // getting users by email
   getByEmail(email: string): Observable<IUser> {
-    let getByEmail_url = this._url + 'email/' + email;
+    let getByEmail_url = this._url + "email/" + email;
     return this.http.get<IUser>(getByEmail_url);
   }
 
