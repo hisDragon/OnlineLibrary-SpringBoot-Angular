@@ -38,6 +38,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { AddBookComponent } from './dashboard/user-specific/add-book/add-book.component';
+import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { AddBookComponent } from './dashboard/user-specific/add-book/add-book.co
     DashboardComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    AddBookComponent
+    AddBookComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

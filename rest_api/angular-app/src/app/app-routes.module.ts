@@ -8,6 +8,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PathNotFoundComponent } from './path-not-found/path-not-found.component';
 import { AuthGuard } from './services/auth-guard.guard';
+import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 
 const APP_ROUTES: Routes = [
     { path: '', component: HomeComponent },  // home component
@@ -15,6 +16,7 @@ const APP_ROUTES: Routes = [
     { path: 'register', component: RegisterComponent }, // register component
     { path: 'forgot-password', component: ForgotPasswordComponent }, // forgot password
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }, // Dashboard
+    { path: 'reset-password', component: ResetPasswordComponent }, // Reset Password Component
     { path: 'about', component: AboutComponent }, // about component
     { path: '**', component: PathNotFoundComponent, pathMatch: 'full' }  // path not found
 ];
