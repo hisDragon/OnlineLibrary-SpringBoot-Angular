@@ -56,8 +56,12 @@ public class UserService implements IUserService {
 
     @Override
     public User saveUser(User user) {
-        if(this.userRepository.findByUserEmail(user.getUserEmail()).isPresent())
-            return null; // userEmail must be unique
+        if(this.userRepository.findByUserEmail(user.getUserEmail()).isPresent()){
+            // update existing emailed user
+            User userUpdate = this.userRepository.findByUserEmail(user.getUserEmail()).get();
+            this.userRepository.save(userUpdate);
+            return userUpdate;
+        }
         
         user.setUserId(this.generateRandId());
         this.userRepository.save(user);
