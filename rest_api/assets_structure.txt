@@ -1,0 +1,25 @@
+src/assets
+    ├───books
+    │   └───categories
+    │       ├───art
+    │       │   ├───img
+    │       │   └───pdf
+    │       ├───geography
+    │       │   ├───img
+    │       │   └───pdf
+    │       ├───history
+    │       │   ├───img
+    │       │   └───pdf
+    │       ├───novel
+    │       │   ├───img
+    │       │   └───pdf
+    │       ├───romance
+    │       │   ├───img
+    │       │   └───pdf
+    │       ├───science
+    │       │   ├───img
+    │       │   └───pdf
+    │       └───social
+    │           ├───img
+    │           └───pdf
+    └───images
