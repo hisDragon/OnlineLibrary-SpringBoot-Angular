@@ -40,6 +40,9 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 import { AddBookComponent } from './dashboard/user-specific/add-book/add-book.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 
+// File Upload Module ng2-file-upload
+import { FileUploadModule } from 'ng2-file-upload';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +68,7 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
     AppRoutesModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FileUploadModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [
