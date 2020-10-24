@@ -18,7 +18,7 @@ const APP_ROUTES: Routes = [
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }, // Dashboard
     { path: 'reset-password', component: ResetPasswordComponent }, // Reset Password Component
     { path: 'about', component: AboutComponent }, // about component
-    { path: '**', component: PathNotFoundComponent, pathMatch: 'full' }  // path not found
+    { path: '**', component: PathNotFoundComponent, pathMatch: 'full' },  // path not found
 ];
 
 @NgModule({

@@ -1,0 +1,40 @@
+
+<form>
+
+    <br>
+    <h4>Book Name</h4>
+    <mat-form-field class="example-full-width">
+        <mat-label>Book Name</mat-label>
+        <input matInput [(ngModel)]="bookName" [ngModelOptions]="{standalone: true}" #message maxlength="256" placeholder="Harry Potter and the ...">
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+    </mat-form-field>
+
+    <br><br>
+    <h4>Select Category</h4>
+    <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select [(ngModel)]="bookCategory" [ngModelOptions]="{standalone: true}" >
+            <mat-option value="art" >Art</mat-option>
+            <mat-option value="geography" >Geography</mat-option>
+            <mat-option value="history" >History</mat-option>
+            <mat-option value="science" >Science</mat-option>
+            <mat-option value="novel" >Novel</mat-option>
+            <mat-option value="romance" >Romance</mat-option>
+            <mat-option value="social" >Social</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <br><br>
+    <h4>Image</h4>
+    <button type="button" mat-raised-button (click)="fileImageInput.click()">Choose File</button>
+    <input hidden (change)="onImageFileSelected($event.target.files)" #fileImageInput type="file" id="img" accept=".png, .jpg, .jpeg" >
+
+    <br><br>
+    <h4>Book</h4>
+    <button type="button" mat-raised-button (click)="filePdfInput.click()">Choose File</button>
+    <input hidden (change)="onPdfFileSelected($event.target.files)" #filePdfInput type="file" id="pdf" accept=".pdf" >
+
+    <br><br>
+    <button type="button" mat-raised-button color="warn" (click)="uploadSubmit()" >Upload</button>
+
+</form>
