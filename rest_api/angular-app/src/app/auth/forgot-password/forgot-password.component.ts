@@ -12,7 +12,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   private _emailUrl: string = "http://localhost:8080/sendEmail/";
 
-  email: string = "a@a.com";
+  email: string = "";
 
   constructor(private router: Router, private httpClient: HttpClient) { }
 

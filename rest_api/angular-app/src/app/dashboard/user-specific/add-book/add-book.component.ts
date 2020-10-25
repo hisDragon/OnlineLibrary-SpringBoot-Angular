@@ -23,8 +23,7 @@ export class AddBookComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  uploadSubmit(event: Event): void {
-    event.preventDefault();
+  uploadSubmit(): void {
     if( this.bookName === '' || 
         this.bookCategory === '' || 
         this.bookImage === null || 

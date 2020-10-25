@@ -59,6 +59,10 @@ public class UserService implements IUserService {
         if(this.userRepository.findByUserEmail(user.getUserEmail()).isPresent()){
             // update existing emailed user
             User userUpdate = this.userRepository.findByUserEmail(user.getUserEmail()).get();
+            userUpdate.setUserName(user.getUserName());
+            userUpdate.setUserPhone(user.getUserPhone());
+            userUpdate.setUserAvatar(user.getUserAvatar());
+            userUpdate.setUserPassword(user.getUserPassword());
             this.userRepository.save(userUpdate);
             return userUpdate;
         }

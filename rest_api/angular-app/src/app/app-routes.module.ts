@@ -16,7 +16,7 @@ const APP_ROUTES: Routes = [
     { path: 'register', component: RegisterComponent }, // register component
     { path: 'forgot-password', component: ForgotPasswordComponent }, // forgot password
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }, // Dashboard
-    { path: 'reset-password', component: ResetPasswordComponent }, // Reset Password Component
+    { path: 'reset-password', component: ResetPasswordComponent, canActivate: [AuthGuard] }, // Reset Password Component
     { path: 'about', component: AboutComponent }, // about component
     { path: '**', component: PathNotFoundComponent, pathMatch: 'full' }  // path not found
 ];
