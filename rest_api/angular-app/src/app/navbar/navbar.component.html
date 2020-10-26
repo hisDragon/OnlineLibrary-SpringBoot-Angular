@@ -11,14 +11,21 @@
         <!-- <a mat-button [routerLink]="'/create-activity'"> Create Activity </a> -->
         <a mat-raised-button color="warn" style="text-decoration: none; margin-right: 20px;" *ngIf="!this.userService.isLoggedIn" [routerLink]="'/login'" >login</a>
         
-        <a mat-raised-button color="warn" style="text-decoration: none;" *ngIf="!this.userService.isLoggedIn" [routerLink]="'/register'" >Register</a>
+        <a mat-raised-button color="warn" style="text-decoration: none; margin-right: 830px;" *ngIf="!this.userService.isLoggedIn" [routerLink]="'/register'" >Register</a>
 
         <!-- logout button -->
-        <a mat-raised-button color="warn" style="text-decoration: none;" *ngIf="this.userService.isLoggedIn" (click)="onLogout()" >Logout</a>
+        <a mat-raised-button color="warn" style="text-decoration: none; margin-right: 890px;" *ngIf="this.userService.isLoggedIn" (click)="onLogout()" >Logout</a>
+
+        
       
       </div>
 
-      
+      <form class="form-inline" >
+        
+        <input class="form-control" type="text" placeholder="Search"
+          aria-label="Search" style="width: 240px;" >
+        <button (click)="onSearch()"><i class="fas fa-search" aria-hidden="true"></i></button>
+      </form>
     </mat-toolbar-row>
 
     

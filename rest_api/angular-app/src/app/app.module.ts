@@ -39,6 +39,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { AddBookComponent } from './dashboard/user-specific/add-book/add-book.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { BookListComponent } from './book-list/book-list.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
     RegisterComponent,
     ForgotPasswordComponent,
     AddBookComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
