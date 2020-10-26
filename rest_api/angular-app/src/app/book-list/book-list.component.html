@@ -1,0 +1,12 @@
+<div class="group" *ngFor="let book of mybooks; let indexOfelement=index" >
+    <img src=" book.bookImagePath ">
+    
+    <div class="details" >
+        <h4><a >{{ book.bookName }}</a></h4>
+        <h5>{{ book.bookId }}</h5>
+        <h5>{{ book.bookCategory }}</h5>
+        <button class="btn btn-primary" (click) = "openNewTab(indexOfelement)">Open</button>
+         <button class="btn btn-primary" >Borrow </button>
+    </div>
+
+</div>

@@ -10,7 +10,9 @@ import { IBook } from '../models/IBook';
 })
 export class BookService {
 
-  private _url: string = "http://localhost:8080/books/"; // url for backend rest api
+   books: IBook[];
+
+  private _url: string = "http://localhost:8081/books/"; // url for backend rest api
 
   // http client dependency
   constructor(private httpClient: HttpClient) { }

@@ -1,0 +1,28 @@
+.group {
+    height: 200px;
+    margin: 20px;
+    background-color: oldlace;
+}
+
+img {
+    display: inline; 
+    height: 180px; 
+    width:140px;
+    margin: 10px;
+}
+.details {
+    display: inline; 
+    float:right; 
+    /* margin-right: 800px; */
+    width: 85%;
+}
+
+h4 :hover {
+    color: red;
+}
+
+.btn {
+    margin-top: 40px;
+    margin-right: 20px;
+    float: right;
+}

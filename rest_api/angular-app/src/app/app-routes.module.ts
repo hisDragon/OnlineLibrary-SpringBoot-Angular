@@ -9,6 +9,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PathNotFoundComponent } from './path-not-found/path-not-found.component';
 import { AuthGuard } from './services/auth-guard.guard';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { BookListComponent } from './book-list/book-list.component';
+
 
 const APP_ROUTES: Routes = [
     { path: '', component: HomeComponent },  // home component
@@ -18,7 +20,9 @@ const APP_ROUTES: Routes = [
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }, // Dashboard
     { path: 'reset-password', component: ResetPasswordComponent, canActivate: [AuthGuard] }, // Reset Password Component
     { path: 'about', component: AboutComponent }, // about component
+    { path: 'book-list' , component: BookListComponent },
     { path: '**', component: PathNotFoundComponent, pathMatch: 'full' }  // path not found
+
 ];
 
 @NgModule({

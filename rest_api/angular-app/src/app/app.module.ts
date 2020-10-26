@@ -39,6 +39,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { AddBookComponent } from './dashboard/user-specific/add-book/add-book.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { BookListComponent } from './book-list/book-list.component';
 
 // File Upload Module ng2-file-upload
 import { FileUploadModule } from 'ng2-file-upload';
@@ -58,7 +59,8 @@ import { FileUploadModule } from 'ng2-file-upload';
     RegisterComponent,
     ForgotPasswordComponent,
     AddBookComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
