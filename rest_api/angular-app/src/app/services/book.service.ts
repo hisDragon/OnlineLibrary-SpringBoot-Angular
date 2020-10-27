@@ -27,4 +27,18 @@ export class BookService {
     return this.httpClient.get<IBook[]>(getByCategory_url);
   }
 
+  postBooks(book): Observable<any> {
+
+    let postUrl = this._url + "addBook/";
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    let options = { headers: headers };
+
+    return this.httpClient.post(postUrl, book, options);
+  }
+
 }
