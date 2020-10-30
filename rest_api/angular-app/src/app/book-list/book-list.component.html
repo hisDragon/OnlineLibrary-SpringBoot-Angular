@@ -1,5 +1,5 @@
 <div class="group" *ngFor="let book of mybooks; let indexOfelement=index" >
-    <img src=" book.bookImagePath ">
+    <img src="{{book.bookImagePath}}">
     
     <div class="details" >
         <h4><a >{{ book.bookName }}</a></h4>

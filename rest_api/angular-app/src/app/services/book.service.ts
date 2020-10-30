@@ -10,7 +10,7 @@ import { IBook } from '../models/IBook';
 })
 export class BookService {
 
-   books: IBook[];
+  public books: IBook[];
 
   private _url: string = "http://localhost:8080/books/"; // url for backend rest api
 
@@ -20,6 +20,11 @@ export class BookService {
   getBooks(): Observable<IBook[]> {
     let get_url = this._url + "all/";
     return this.httpClient.get<IBook[]>(get_url);
+  }
+
+  getBooksByName(name: string): Observable<any>{
+    let getByName_url = this._url + "name/" + name;
+    return this.httpClient.get<IBook>(getByName_url);
   }
 
   getBooksByCategory(category: string): Observable<IBook[]> {
