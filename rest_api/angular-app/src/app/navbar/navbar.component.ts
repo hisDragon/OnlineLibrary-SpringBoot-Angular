@@ -34,6 +34,7 @@ export class NavbarComponent implements OnInit {
         this.router.navigate(['/book-list']);
       },
       error => {
+        this.books.pop();
         console.log("No Book Searched");
         this.router.navigate(['/book-list']);
       }

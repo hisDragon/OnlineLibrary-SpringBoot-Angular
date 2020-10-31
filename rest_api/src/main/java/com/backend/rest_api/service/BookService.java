@@ -83,7 +83,11 @@ public class BookService implements IBookService {
         if( bookNamePresent && bookAuthorsListEmpty ){
             // 0 0
             // old book without authors :(
-            return new Book(0, "<BOOK_PRESENT>", "", "", "", Collections.emptyList()); // returning empty Book object with default values and not saving it to DataBase
+            // but update existing values
+            Book bookToUpdate = this.bookRepository.findById(book.getBookId()).get();
+            bookToUpdate.setBorrowerId(book.getBorrowerId());
+
+            return this.bookRepository.save(bookToUpdate);
         }
         else if( !bookNamePresent && bookAuthorsListEmpty ){
             // 1 0

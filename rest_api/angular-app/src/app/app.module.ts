@@ -43,6 +43,10 @@ import { BookListComponent } from './book-list/book-list.component';
 
 // File Upload Module ng2-file-upload
 import { FileUploadModule } from 'ng2-file-upload';
+import { BorrowComponent } from './borrow/borrow.component';
+
+// pdf view module
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -60,7 +64,8 @@ import { FileUploadModule } from 'ng2-file-upload';
     ForgotPasswordComponent,
     AddBookComponent,
     ResetPasswordComponent,
-    BookListComponent
+    BookListComponent,
+    BorrowComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +76,7 @@ import { FileUploadModule } from 'ng2-file-upload';
     BrowserAnimationsModule,
     MaterialModule,
     FileUploadModule,
+    PdfViewerModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [

@@ -6,5 +6,6 @@ export interface IBook{
     bookPath: string,
     bookImagePath: string,
     bookCategory: string,
+    borrowerId?: number,
     authors: IAuthor[]
 }
