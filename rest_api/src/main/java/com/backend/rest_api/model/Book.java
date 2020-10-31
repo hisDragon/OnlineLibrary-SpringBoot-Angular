@@ -107,6 +107,4 @@ public class Book {
         return this.authors;
     }
     // SETTERS and GETTERS
-
-
 }

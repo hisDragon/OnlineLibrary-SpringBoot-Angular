@@ -42,7 +42,7 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { BookListComponent } from './book-list/book-list.component';
 
 // File Upload Module ng2-file-upload
-import { FileUploadModule } from 'ng2-file-upload';
+// import { FileUploadModule } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -70,7 +70,7 @@ import { FileUploadModule } from 'ng2-file-upload';
     AppRoutesModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FileUploadModule,
+    // FileUploadModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [

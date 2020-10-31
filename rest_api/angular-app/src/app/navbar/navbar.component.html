@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" fullscreen >
+<mat-toolbar color="primary" fullscreen style="width: 100%">
     <mat-toolbar-row >
       <button mat-icon-button>
         <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
@@ -6,26 +6,28 @@
       <h1>Online &middot; Library</h1>
       <span class="menu-spacer"></span>
 
-      <div class="login-class">
+      <div class="login-class" style="width: 85%;">
         
         <!-- <a mat-button [routerLink]="'/create-activity'"> Create Activity </a> -->
-        <a mat-raised-button color="warn" style="text-decoration: none; margin-right: 20px;" *ngIf="!this.userService.isLoggedIn" [routerLink]="'/login'" >login</a>
+        <a mat-raised-button color="warn" style="text-decoration: none; margin-right: 20px; " *ngIf="!this.userService.isLoggedIn" [routerLink]="'/login'" >Login</a>
         
-        <a mat-raised-button color="warn" style="text-decoration: none; margin-right: 830px;" *ngIf="!this.userService.isLoggedIn" [routerLink]="'/register'" >Register</a>
+        <a mat-raised-button color="warn" style="text-decoration: none; " *ngIf="!this.userService.isLoggedIn" [routerLink]="'/register'" >Register</a>
 
         <!-- logout button -->
-        <a mat-raised-button color="warn" style="text-decoration: none; margin-right: 890px;" *ngIf="this.userService.isLoggedIn" (click)="onLogout()" >Logout</a>
+        <a mat-raised-button color="warn" style="text-decoration: none;" *ngIf="this.userService.isLoggedIn" (click)="onLogout()" >Logout</a>
 
         
       
-      </div>
+      
 
-      <form class="form-inline" >
+      <form class="form-inline"  style="float: right;">
         
         <input class="form-control" type="text" placeholder="Search"
-          aria-label="Search" style="width: 240px;" >
-        <button (click)="onSearch()"><i class="fas fa-search" aria-hidden="true"></i></button>
+          aria-label="Search" style="width: 250px; display: inline; " >
+          <button (click)="onSearch()" ><i class="fas fa-search" aria-hidden="true"></i></button>
       </form>
+
+    </div>
     </mat-toolbar-row>
 
     
