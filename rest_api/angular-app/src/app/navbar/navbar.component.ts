@@ -11,9 +11,9 @@ import { IBook } from '../models/IBook';
 })
 export class NavbarComponent implements OnInit {
 
-  public books : IBook[] ;
+  public books : IBook[] = [];
 
-  constructor(public userService: UserService, private bookService: BookService,private router: Router) { }
+  constructor(public userService: UserService, private bookService: BookService, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -26,12 +26,18 @@ export class NavbarComponent implements OnInit {
   }
 
   onSearch(): void {
-    this.bookService.getBooks().subscribe(
+    let searchString: string = (document.getElementById("search") as HTMLInputElement).value;
+    this.bookService.getBooksByName(searchString.toString()).subscribe(
       res => {
-        this.bookService.books = res;
+        this.books[0] = res;
+        this.bookService.books = this.books;
         this.router.navigate(['/book-list']);
       },
-      error => console.log(error)
+      error => {
+        this.books.pop();
+        console.log("No Book Searched");
+        this.router.navigate(['/book-list']);
+      }
     )
   }
 

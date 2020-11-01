@@ -23,6 +23,11 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 )
 public class Book {
     
+    /**
+     *
+     */
+    private static final int DEFAULT_BORROWER_ID = 0;
+
     @Id
     @Column(name = "bookId")
     private int bookId; // **7-DIGIT** PRIMARY KEY
@@ -44,6 +49,9 @@ public class Book {
                 inverseJoinColumns = { @JoinColumn(name = "authorId") }
             )
     private List<Author> authors = new ArrayList<>();
+
+    @Column(name = "borrowerId")
+    private int borrowerId = DEFAULT_BORROWER_ID;
 
     public Book() {} // default constructor
 
@@ -105,6 +113,12 @@ public class Book {
         this.authors = authors;
     }public List<Author> getAuthors(){
         return this.authors;
+    }
+
+    public void setBorrowerId(int borrowerId){
+        this.borrowerId = borrowerId;
+    }public int getBorrowerId(){
+        return this.borrowerId;
     }
     // SETTERS and GETTERS
 }

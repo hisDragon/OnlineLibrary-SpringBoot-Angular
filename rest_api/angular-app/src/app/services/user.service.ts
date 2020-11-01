@@ -24,7 +24,7 @@ export class UserService {
   }
 
   // backend rest api
-  private _url: string = "http://localhost:8081/users/";
+  private _url: string = "http://localhost:8080/users/";
 
   constructor(private http: HttpClient) { }
 
@@ -32,6 +32,11 @@ export class UserService {
   getUsers(): Observable<IUser> {
     let get_url = this._url + 'all/';
     return this.http.get<IUser>(get_url);
+  }
+
+  getById(bookId: number): Observable<IUser> {
+    let getById_url = this._url + bookId;
+    return this.http.get<IUser>(getById_url);
   }
 
   // getting users by email

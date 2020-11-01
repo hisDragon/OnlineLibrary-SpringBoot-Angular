@@ -42,7 +42,11 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { BookListComponent } from './book-list/book-list.component';
 
 // File Upload Module ng2-file-upload
-// import { FileUploadModule } from 'ng2-file-upload';
+import { FileUploadModule } from 'ng2-file-upload';
+import { BorrowComponent } from './borrow/borrow.component';
+
+// pdf view module
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -60,7 +64,8 @@ import { BookListComponent } from './book-list/book-list.component';
     ForgotPasswordComponent,
     AddBookComponent,
     ResetPasswordComponent,
-    BookListComponent
+    BookListComponent,
+    BorrowComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +75,8 @@ import { BookListComponent } from './book-list/book-list.component';
     AppRoutesModule,
     BrowserAnimationsModule,
     MaterialModule,
-    // FileUploadModule,
+    FileUploadModule,
+    PdfViewerModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [

@@ -1,0 +1,13 @@
+<div *ngIf="isBookAvailable; else bookUnAvilable" >
+    <pdf-viewer [src]="book.bookPath" [render-text]="false" [show-borders]="true" style="display: block;" >
+    </pdf-viewer>
+    <div style="padding-left: 150px;" >
+        <a mat-raised-button color="warn" (click)="onReturn()" >Return</a>
+    </div>
+</div>
+
+<ng-template #bookUnAvilable >
+    <h4>Book You are Looking For is Already Borrowed {{user.userName}}!</h4>
+</ng-template>
+
+<app-footer></app-footer>
