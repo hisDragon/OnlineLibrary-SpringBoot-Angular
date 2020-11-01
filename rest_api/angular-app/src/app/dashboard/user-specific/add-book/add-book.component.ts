@@ -38,7 +38,7 @@ export class AddBookComponent implements OnInit {
         this.bookImage === null || 
         this.bookPdf === null 
     ) {
-          alert("You've missed one of the fields");
+          alert("You've missed one/some of the fields");
     }else{
       this.uploadService().subscribe(
         res => {

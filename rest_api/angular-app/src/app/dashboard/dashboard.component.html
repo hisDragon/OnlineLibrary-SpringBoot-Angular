@@ -33,7 +33,7 @@
 
   </div>
 
-  <div class="row " >
+  <div class="row " *ngIf="borrowedBook !== null; else notBorrowed" >
 
     <div class="col-md-3 col-xs-6">
       <div class="details-left">
@@ -49,14 +49,17 @@
      <div class="col-md-3 col-xs-6">
        <div class="detail-right">
          <ul>
-           <li> 2379 </li>
-           <li> Java </li>
-           <li> Nishanth </li>
+           <li> {{borrowedBook.bookId}} </li>
+           <li> {{borrowedBook.bookName}} </li>
+           <li> {{borrowedBook.authors[0].authorName}} </li>
          </ul>
        </div>
-     </div>   
-
+     </div>
   </div>
+
+  <ng-template #notBorrowed class="row" >
+    <h3>You have not borrowed any book</h3>
+  </ng-template>
 
   
 

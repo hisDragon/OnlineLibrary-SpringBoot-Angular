@@ -45,10 +45,24 @@ export class BookListComponent implements OnInit {
             console.log("Error: ", err);
           }
         );
+      }else if( this.bookService.books[0].borrowerId === this.userService.userInfo.userId ){
+        this.router.navigate(['/borrow']);
       }else{
         // book is borrowed
         console.log("INSIDE ELSE");
-        this.router.navigate(['/borrow']);
+        let borrowerName: string = "";
+        this.userService.getById(this.bookService.books[0].borrowerId).subscribe(
+          user => {
+            console.log(user);
+            borrowerName = user.userName;
+          },
+          err => console.log(err),
+          () => {
+            alert("This book is already borrowed " + (borrowerName === "" ? "" : "by " + borrowerName) );
+            this.router.navigate(['/dashboard']);
+          }
+        );
+        
       }
     }else{
       // not logged in

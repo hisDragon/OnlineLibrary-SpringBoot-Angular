@@ -29,9 +29,14 @@ export class NavbarComponent implements OnInit {
     let searchString: string = (document.getElementById("search") as HTMLInputElement).value;
     this.bookService.getBooksByName(searchString.toString()).subscribe(
       res => {
-        this.books[0] = res;
-        this.bookService.books = this.books;
-        this.router.navigate(['/book-list']);
+        if(res){
+          this.books[0] = res;
+          this.bookService.books = this.books;
+          this.router.navigate(['/book-list']);
+        }else{
+          alert("no book by name " + searchString);
+          this.router.navigate(['/']);
+        }
       },
       error => {
         this.books.pop();

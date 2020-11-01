@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IBook } from '../models/IBook';
+import { BookService } from '../services/book.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -13,10 +16,27 @@ export class DashboardComponent implements OnInit {
   userEmail: string = this.userService.userInfo.userEmail;
   userId: number = this.userService.userInfo.userId;
 
-  constructor(private userService : UserService) { }
+  borrowedBook: IBook = null;
+
+  constructor(private userService : UserService, 
+    private bookService: BookService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
-  }
 
+    this.bookService.getBooks().subscribe(
+      (res: IBook[]) => {
+        res.forEach((book) => {
+          if(book.borrowerId === this.userId){
+            this.borrowedBook = {} as IBook;
+            this.borrowedBook = book;
+          }
+        });
+      },
+      err => console.log(err)
+    );
+
+  }
 
 }
