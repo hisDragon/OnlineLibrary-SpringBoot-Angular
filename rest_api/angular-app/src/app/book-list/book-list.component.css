@@ -1,20 +1,32 @@
-.group {
+.group {   
+    margin: 5px;
+    background-color: rgb(213, 228, 227);
+    border-radius: 10px;
     height: 200px;
-    margin: 20px;
-    background-color: oldlace;
 }
 
-img {
-    display: inline; 
-    height: 180px; 
-    width:140px;
-    margin: 10px;
+img {  
+    height: 150px; 
+    width:130px;
+    margin: 25px;
 }
-.details {
-    display: inline; 
-    float:right; 
-    /* margin-right: 800px; */
-    width: 85%;
+
+.image {
+    float: left;
+    width: 20%;
+    height: 200Px;
+}
+
+.details {    
+    float: left;
+    width: 40%;
+    height: 200Px;
+}
+
+.button_class {
+    float: right;   
+    width: 40%;
+    height: 200Px;
 }
 
 h4 :hover {
@@ -22,7 +34,11 @@ h4 :hover {
 }
 
 .btn {
-    margin-top: 40px;
-    margin-right: 20px;
-    float: right;
+    margin-left: 10px;
+    margin-right: 10px;       
 }
+
+img :hover {
+    opacity: 0.3;
+}
+

@@ -121,6 +121,4 @@ public class Book {
         return this.borrowerId;
     }
     // SETTERS and GETTERS
-
-
 }
