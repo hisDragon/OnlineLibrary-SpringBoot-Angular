@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IBook } from 'src/app/models/IBook';
 import { BookService } from 'src/app/services/book.service';
 import { UserService } from 'src/app/services/user.service';
@@ -14,7 +15,8 @@ export class AddedBookListComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private bookService: BookService
+    private bookService: BookService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,7 +29,5 @@ export class AddedBookListComponent implements OnInit {
       err => console.log(err)
     );
   }
-
-  onBorrow(): void {}
 
 }

@@ -28,17 +28,22 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.bookService.getBooks().subscribe(
-      (res: IBook[]) => {
-        res.forEach((book) => {
-          if(book.borrowerId === this.userId){
-            this.borrowedBook = {} as IBook;
-            this.borrowedBook = book;
-          }
-        });
-      },
-      err => console.log(err)
-    );
+    if(this.userService.userInfo.borrowedBookId === 0){
+      // not borrowed any book
+      console.log("In IF");
+      this.borrowedBook = null;
+    }else{
+      // book is borrowed
+      console.log("In ELSE");
+      this.bookService.getBookById(this.userService.userInfo.borrowedBookId).subscribe(
+        (book: IBook) => {
+          console.log(book);
+          this.borrowedBook = {} as IBook;
+          this.borrowedBook = book;
+        },
+        err => console.log(err)
+      );
+    }
 
   }
 
