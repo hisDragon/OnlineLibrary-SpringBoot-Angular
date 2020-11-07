@@ -12,7 +12,7 @@ export class BookService {
 
   public books: IBook[];
 
-  private _url: string = "http://localhost:8081/books/"; // url for backend rest api
+  private _url: string = "http://localhost:8080/books/"; // url for backend rest api
 
   // http client dependency
   constructor(private httpClient: HttpClient) { }
