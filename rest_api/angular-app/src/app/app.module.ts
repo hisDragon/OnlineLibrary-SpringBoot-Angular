@@ -47,6 +47,7 @@ import { BorrowComponent } from './borrow/borrow.component';
 
 // pdf view module
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { UpdateDashboardComponent } from './update-dashboard/update-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     AddBookComponent,
     ResetPasswordComponent,
     BookListComponent,
-    BorrowComponent
+    BorrowComponent,
+    UpdateDashboardComponent
   ],
   imports: [
     BrowserModule,

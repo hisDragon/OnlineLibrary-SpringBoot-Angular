@@ -100,5 +100,5 @@ export class AddBookComponent implements OnInit {
 
     return this.http.post(uploadUrl, formData, { responseType: "text" }); // no headers required as { 'Content-Type': multipart/formdata } is default
   }
-
+  
 }
