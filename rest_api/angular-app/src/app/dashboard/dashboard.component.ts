@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   userPhone: string = this.userService.userInfo.userPhone;
   userEmail: string = this.userService.userInfo.userEmail;
   userId: number = this.userService.userInfo.userId;
+  userAvatar: string = this.userService.userInfo.userAvatar;
 
   borrowedBook: IBook = null;
 

@@ -15,13 +15,12 @@ import org.springframework.stereotype.Service;
 
 interface IBookService{
     public abstract List<Book> getBooks();
+    public abstract List<Book> getBooksByIds(List<Integer> ids);
     public abstract Optional<Book> getBookById(int bookId);
     public abstract Optional<Book> getBookByName(String bookName);
     public abstract List<Book> getBooksByCategory(String bookCategory);
 
     public abstract Book saveBook(Book book);
-    // public abstract Book saveBook(Book book, Author author);
-    // public abstract Book saveBook(Book book, List<Author> authors);
 }
 
 
@@ -37,6 +36,11 @@ public class BookService implements IBookService {
     @Override
     public List<Book> getBooks() {
         return this.bookRepository.findAll();
+    }
+
+    @Override
+    public List<Book> getBooksByIds(List<Integer> ids) {
+        return this.bookRepository.findAllById(ids);
     }
 
     @Override
@@ -85,7 +89,6 @@ public class BookService implements IBookService {
             // old book without authors :(
             // but update existing values
             Book bookToUpdate = this.bookRepository.findById(book.getBookId()).get();
-            bookToUpdate.setBorrowerId(book.getBorrowerId());
 
             return this.bookRepository.save(bookToUpdate);
         }
@@ -187,53 +190,5 @@ public class BookService implements IBookService {
         }
 
     }
-
-    /* I think we don't need the bottom part at least for now */
-
-    // @Override
-    // public Book saveBook(Book book, Author author) {
-
-    //     if(this.bookRepository.findByBookName(book.getBookName()).isPresent()){
-    //         // book present add author to it
-    //         int id = this.bookRepository.findByBookName(book.getBookName()).get().getBookId(); // get the bookId
-    //         Book bookToUpdate = this.bookRepository.getOne(id); // got the reference of the book
-
-    //         // now update the authors
-    //         bookToUpdate.getAuthors().add(author);
-    //         this.bookRepository.save(bookToUpdate);
-
-    //         return bookToUpdate;
-
-    //     }else{
-    //         // book not present create new bookId and add author to it
-    //         book.getAuthors().add(author);
-    //         this.saveBook(book); // code-reuse :)
-
-    //         return book;
-    //     }
-
-    // }
-
-    // @Override
-    // public Book saveBook(Book book, List<Author> authors) {
-    //     if(this.bookRepository.findByBookName(book.getBookName()).isPresent()){
-    //         // book present add author(s) to it
-    //         int id = this.bookRepository.findByBookName(book.getBookName()).get().getBookId(); // get the bookId
-    //         Book bookToUpdate = this.bookRepository.getOne(id); // got the reference of the book
-
-    //         // add all authors
-    //         bookToUpdate.getAuthors().addAll(authors);
-    //         this.bookRepository.save(bookToUpdate);
-            
-    //         return bookToUpdate;
-
-    //     }else{
-    //         // book not present create new bookId and add author to it
-    //         book.getAuthors().addAll(authors);
-    //         this.saveBook(book); // code reuse :)
-
-    //         return book;
-    //     }
-    // }
 
 }

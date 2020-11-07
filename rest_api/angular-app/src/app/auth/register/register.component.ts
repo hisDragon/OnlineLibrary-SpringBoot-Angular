@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
     let registerUser: IUser = {
       userId: 1,
       userName: this.form.get('firstName').value + " " + this.form.get('lastName').value,
-      userAvatar: '/path/to/avatar',
+      userAvatar: 'assets/images/avatar.jpg',
       userPhone: this.form.get('phone').value,
       userEmail: this.form.get('email').value,
       userPassword: this.form.get('password').value

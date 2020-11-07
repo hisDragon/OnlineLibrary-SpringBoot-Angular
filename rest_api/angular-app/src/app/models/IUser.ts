@@ -4,5 +4,7 @@ export interface IUser{
     userPhone: string,
     userAvatar: string,
     userEmail: string,
-    userPassword: string
+    userPassword: string,
+    addedBooks?: number[],
+    borrowedBookId?: number
 }

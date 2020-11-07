@@ -1,5 +1,8 @@
 package com.backend.rest_api.model;
 
+import java.util.ArrayList;
+// import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,6 +12,8 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User {
     
+    private static final int DEFAULT_BORROWED_BOOK_ID = 0;
+
     @Id
     @Column(name = "userId")
     private int userId; // **6-DIGIT** PRIMARY KEY
@@ -28,11 +33,22 @@ public class User {
     @Column(name = "userPassword")
     private String userPassword;
 
+    @Column(name = "addedBooks")
+    private ArrayList<Integer> addedBooks = new ArrayList<>();
+
+    @Column(name = "borrowedBookId")
+    private Integer borrowedBookId = DEFAULT_BORROWED_BOOK_ID;
+
     public User(){} // default constructor
 
     // parameterised constructor
     public User(
-        int userId, String userName, String userPhone, String userAvatar,String userEmail, String userPassword
+        int userId, 
+        String userName, 
+        String userPhone, 
+        String userAvatar, 
+        String userEmail, 
+        String userPassword
     ){
 
         this.userId = userId;
@@ -80,6 +96,18 @@ public class User {
         this.userPassword = userPassword;
     }public String getUserPassword(){
         return this.userPassword;
+    }
+
+    public void setAddedBooks(ArrayList<Integer> addedBooks){
+        this.addedBooks = addedBooks;
+    }public ArrayList<Integer> getAddedBooks(){
+        return this.addedBooks;
+    }
+
+    public void setBorrowedBookId(int borrowedBookId){
+        this.borrowedBookId = borrowedBookId;
+    }public int getBorrowedBookId(){
+        return this.borrowedBookId;
     }
     // SETTERS and GETTERS
 

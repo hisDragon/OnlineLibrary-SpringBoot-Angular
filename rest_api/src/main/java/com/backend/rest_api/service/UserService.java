@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 interface IUserService {
     public abstract List<User> getUsers();
+    public abstract List<User> getUsersByIds(List<Integer> ids);
     public abstract Optional<User> getUserById(int userId);
     public abstract Optional<User> getUserByEmail(String userEmail);
 
@@ -27,6 +28,11 @@ public class UserService implements IUserService {
     @Override
     public List<User> getUsers() {
         return this.userRepository.findAll();
+    }
+
+    @Override
+    public List<User> getUsersByIds(List<Integer> ids){
+        return this.userRepository.findAllById(ids);
     }
 
     @Override
@@ -63,6 +69,8 @@ public class UserService implements IUserService {
             userUpdate.setUserPhone(user.getUserPhone());
             userUpdate.setUserAvatar(user.getUserAvatar());
             userUpdate.setUserPassword(user.getUserPassword());
+            userUpdate.setBorrowedBookId(user.getBorrowedBookId());
+            userUpdate.getAddedBooks().addAll(user.getAddedBooks());
             this.userRepository.save(userUpdate);
             return userUpdate;
         }

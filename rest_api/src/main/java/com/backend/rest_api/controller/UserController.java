@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,6 +42,13 @@ public class UserController {
     @CrossOrigin
     public @ResponseBody Optional<User> getUser(@PathVariable("userEmail") String userEmail){
         return this.userService.getUserByEmail(userEmail);
+    }
+
+    // get all by list of id
+    @GetMapping(path = "/users/ids")
+    @CrossOrigin
+    public @ResponseBody List<User> getAllByIds(@RequestParam(name = "id") List<Integer> ids){
+        return this.userService.getUsersByIds(ids);
     }
 
     ////////////////////////////// GET END //////////////////////////////

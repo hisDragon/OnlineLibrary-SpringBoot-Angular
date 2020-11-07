@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,6 +47,13 @@ public class BookController {
     @CrossOrigin
     public @ResponseBody List<Book> getBooksByCategory(@PathVariable("bookCategory") String bookCategory){
         return this.bookService.getBooksByCategory(bookCategory);
+    }
+
+    // get all by list of id
+    @GetMapping(path = "/users/ids")
+    @CrossOrigin
+    public @ResponseBody List<Book> getAllByIds(@RequestParam(name = "id") List<Integer> ids){
+        return this.bookService.getBooksByIds(ids);
     }
 
     ////////////////////////////// GET END //////////////////////////////

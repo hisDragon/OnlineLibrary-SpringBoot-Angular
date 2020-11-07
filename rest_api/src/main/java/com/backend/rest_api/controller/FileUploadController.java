@@ -41,5 +41,22 @@ public class FileUploadController {
         return "Success";
         
     }
+
+    @PostMapping(path = "/files/upload/avatar")
+    @CrossOrigin
+    public @ResponseBody String uploadAvatarToLocal(@RequestParam("userAvatar") MultipartFile userAvatar){
+
+        String sourceAvatarName = StringUtils.cleanPath(userAvatar.getOriginalFilename());
+
+        Path targetAvatarPath = Paths.get("angular-app/src/assets/avatars/" + sourceAvatarName);
+
+        try {
+            Files.copy(userAvatar.getInputStream(), targetAvatarPath, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "Success";
+    }
       
 }
