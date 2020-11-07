@@ -24,7 +24,7 @@ export class UserService {
   }
 
   // backend rest api
-  private _url: string = "http://localhost:8080/users/";
+  private _url: string = "http://localhost:8081/users/";
 
   constructor(private http: HttpClient) { }
 

@@ -1,0 +1,24 @@
+<form class="form-body">
+    <div class="form-group">
+      
+      <img src="../../assets/images/avatar.jpg">  
+    <input hidden  accept=".png, .jpg, .jpeg" >
+    <button type="button" >Choose File</button>
+      </div>
+
+    <div class="form-group">
+      
+      <input type="text" class="form-control"  [(ngModel)]="newName" name = "newName"
+       placeholder="{{userName}}">
+      
+    </div>
+    
+    <div class="form-group">
+      
+        <input type="text" class="form-control" [(ngModel)]="newPhoneNumber" name ="newNumber" placeholder="{{userPhone}}">
+        
+    </div>
+    
+    <button class="btn btn-primary" (click) = "onSubmit()">Save</button>
+  </form>
+  
