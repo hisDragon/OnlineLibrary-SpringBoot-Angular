@@ -96,7 +96,7 @@ export class AddBookComponent implements OnInit {
     formData.append('img', this.bookImage, imgName);
     formData.append('file', this.bookPdf, pdfName);
 
-    const uploadUrl: string = "http://localhost:8081/files/upload/" + this.bookCategory; // add category at the end
+    const uploadUrl: string = "http://localhost:8080/files/upload/" + this.bookCategory; // add category at the end
 
     return this.http.post(uploadUrl, formData, { responseType: "text" }); // no headers required as { 'Content-Type': multipart/formdata } is default
   }
