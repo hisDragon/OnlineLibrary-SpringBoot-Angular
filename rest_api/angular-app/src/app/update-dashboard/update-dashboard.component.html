@@ -1,4 +1,5 @@
-<form class="form-body">
+<div class="container">
+  <form class="form-body">
     <div class="form-group">
       
       <img [src]=" userAvatar " alt="Avatar">
@@ -10,7 +11,7 @@
     <div class="form-group">
       
       <input type="text" class="form-control"  [(ngModel)]="newName" name = "newName"
-       placeholder="{{userName}}">
+        placeholder="{{userName}}">
       
     </div>
     
@@ -22,4 +23,6 @@
     
     <button class="btn btn-primary" (click) = "onSubmit()">Save</button>
   </form>
-  
+</div>
+
+<app-footer></app-footer>

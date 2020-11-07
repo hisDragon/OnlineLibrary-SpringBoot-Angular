@@ -1,20 +1,22 @@
-<div class="group" *ngFor="let book of mybooks; let indexOfelement=index" >
+<div class="container">
+    <div class="group" *ngFor="let book of mybooks; let indexOfelement=index" >
 
-    <div class="image">
-        <img [src]=" book.bookImagePath ">
-    </div>
-    <div class="details" >
-        <h4 style="margin-top: 30px;"><a >{{ book.bookName }}</a></h4>
-        <h5>{{ book.bookId }}</h5>
-        <h5>{{ book.bookCategory }}</h5>
-      
-    </div>
+        <div class="image">
+            <img [src]=" book.bookImagePath ">
+        </div>
+        <div class="details" >
+            <h4 style="margin-top: 30px;"><a >{{ book.bookName }}</a></h4>
+            <h5>{{ book.bookId }}</h5>
+            <h5>{{ book.bookCategory }}</h5>
+        
+        </div>
 
-    <div class=" button_class">
-        <button class="btn float-right btn-primary" (click) = "openNewTab(indexOfelement)" style="margin-top: 150px;">Open</button>
-         <button class="btn float-right btn-primary" style="margin-top: 150px;" (click)="onBorrow()" >Borrow </button>
+        <div class=" button_class">
+            <button class="btn float-right btn-primary" (click) = "openNewTab(indexOfelement)" style="margin-top: 150px;">Open</button>
+            <button class="btn float-right btn-primary" style="margin-top: 150px;" (click)="onBorrow()" >Borrow </button>
+        </div>
+        <br>
     </div>
-    <br>
 </div>
 
 <app-footer></app-footer>

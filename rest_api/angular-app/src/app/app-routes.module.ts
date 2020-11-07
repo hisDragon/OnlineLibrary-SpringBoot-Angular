@@ -12,6 +12,7 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { BookListComponent } from './book-list/book-list.component';
 import { BorrowComponent } from './borrow/borrow.component';
 import { UpdateDashboardComponent } from './update-dashboard/update-dashboard.component';
+import { AddedBookListComponent } from './dashboard/user-specific/added-book-list/added-book-list.component';
 
 
 const APP_ROUTES: Routes = [
@@ -22,6 +23,7 @@ const APP_ROUTES: Routes = [
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }, // Dashboard
     { path: 'reset-password', component: ResetPasswordComponent, canActivate: [AuthGuard] }, // Reset Password Component
     { path: 'about', component: AboutComponent }, // about component
+    { path: 'added-book-list', component: AddedBookListComponent, canActivate: [AuthGuard] }, // book list added by the user
     { path: 'book-list' , component: BookListComponent }, // book listing
     { path: 'borrow', component: BorrowComponent, canActivate: [AuthGuard] }, // borrowing book
     { path: 'update-dashboard', component: UpdateDashboardComponent, canActivate: [AuthGuard] }, // update-dashboard 

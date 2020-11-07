@@ -23,6 +23,8 @@ import { HomeComponent } from './home/home.component'; // sub-components ▼
   import { CategoryComponent } from './inhome/category/category.component';
   import { RecommendedBooksComponent } from './inhome/recommended-books/recommended-books.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UpdateDashboardComponent } from './update-dashboard/update-dashboard.component';
+import { AddedBookListComponent } from './dashboard/user-specific/added-book-list/added-book-list.component';
 // auth ▼
   import { LoginComponent } from './auth/login/login.component';
   import { RegisterComponent } from './auth/register/register.component';
@@ -47,7 +49,6 @@ import { BorrowComponent } from './borrow/borrow.component';
 
 // pdf view module
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-import { UpdateDashboardComponent } from './update-dashboard/update-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { UpdateDashboardComponent } from './update-dashboard/update-dashboard.co
     ResetPasswordComponent,
     BookListComponent,
     BorrowComponent,
-    UpdateDashboardComponent
+    UpdateDashboardComponent,
+    AddedBookListComponent
   ],
   imports: [
     BrowserModule,

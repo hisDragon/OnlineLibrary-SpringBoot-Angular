@@ -3,74 +3,75 @@
   <h3>{{ userName }}</h3>
 </div>
 
-<div class="user">
-  <img [src]=" userAvatar ">
-</div>
-<button class="btn btn-primary" style="float: right;" [routerLink]="'/update-dashboard'">Edit</button>
 <div class="container">
-  <div class="row" >
+  <div class="user">
+    <img [src]=" userAvatar ">
+  </div>
+  <button class="btn btn-primary" style="float: right;" [routerLink]="'/update-dashboard'">Edit</button>
+  <div class="container">
+    <div class="row" >
 
-    <div class="col-md-3 col-xs-6">
-      <div class="details-left">
-        <h3>Contact <i>Details</i></h3>
-            <ul>
-            <li>ID</li>
-            <li>Phone</li>          
-            <li>E-mail</li>
-            </ul>
+      <div class="col-md-3 col-xs-6">
+        <div class="details-left">
+          <h3>Contact <i>Details</i></h3>
+              <ul>
+              <li>ID</li>
+              <li>Phone</li>          
+              <li>E-mail</li>
+              </ul>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-xs-6">
+        <div class="detail-right">
+          <ul>
+            <li>{{  userId }}</li>
+            <li>{{ userPhone }}</li>
+            <li>{{ userEmail }}</li>
+          </ul>
+        </div>
+      </div>   
+
+    </div>
+
+    <div class="row " *ngIf="borrowedBook !== null; else notBorrowed" >
+
+      <div class="col-md-3 col-xs-6">
+        <div class="details-left">
+          <h3>Book <i>Details</i></h3>
+              <ul>
+              <li>Book ID</li>
+              <li>Book Name</li>          
+              <li>Author</li>
+              </ul>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-xs-6">
+        <div class="detail-right">
+          <ul>
+            <li> {{borrowedBook.bookId}} </li>
+            <li> {{borrowedBook.bookName}} </li>
+            <li> {{borrowedBook.authors[0].authorName}} </li>
+          </ul>
+        </div>
       </div>
     </div>
 
-     <div class="col-md-3 col-xs-6">
-       <div class="detail-right">
-         <ul>
-           <li>{{  userId }}</li>
-           <li>{{ userPhone }}</li>
-           <li>{{ userEmail }}</li>
-         </ul>
-       </div>
-     </div>   
+    <ng-template #notBorrowed class="row" >
+      <h3>You have not borrowed any book</h3>
+    </ng-template>
 
-  </div>
+    
 
-  <div class="row " *ngIf="borrowedBook !== null; else notBorrowed" >
-
-    <div class="col-md-3 col-xs-6">
-      <div class="details-left">
-        <h3>Book <i>Details</i></h3>
-            <ul>
-            <li>Book ID</li>
-            <li>Book Name</li>          
-            <li>Author</li>
-            </ul>
-      </div>
+    <button mat-raised-button color="primary" class="waves-light" type="button" (click)="test.toggle()">
+      Add Book
+    </button>
+    
+    <div class="" mdbCollapse #test="bs-collapse">
+      <app-add-book></app-add-book>
     </div>
 
-     <div class="col-md-3 col-xs-6">
-       <div class="detail-right">
-         <ul>
-           <li> {{borrowedBook.bookId}} </li>
-           <li> {{borrowedBook.bookName}} </li>
-           <li> {{borrowedBook.authors[0].authorName}} </li>
-         </ul>
-       </div>
-     </div>
   </div>
-
-  <ng-template #notBorrowed class="row" >
-    <h3>You have not borrowed any book</h3>
-  </ng-template>
-
-  
-
-  <button mat-raised-button color="primary" class="waves-light" type="button" (click)="test.toggle()">
-    Add Book
-  </button>
-  
-  <div class="" mdbCollapse #test="bs-collapse">
-    <app-add-book></app-add-book>
-  </div>
-
 </div>
-
 <app-footer></app-footer>
