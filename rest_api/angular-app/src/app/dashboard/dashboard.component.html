@@ -62,7 +62,9 @@
       <h3>You have not borrowed any book</h3>
     </ng-template>
 
-    
+    <div>
+      You have added <a [routerLink]="'/added-book-list'">{{addedBooks.length}} book(s)</a>.
+    </div>
 
     <button mat-raised-button color="primary" class="waves-light" type="button" (click)="test.toggle()">
       Add Book

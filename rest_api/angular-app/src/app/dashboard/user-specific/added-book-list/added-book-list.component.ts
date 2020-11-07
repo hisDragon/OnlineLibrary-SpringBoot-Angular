@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IBook } from 'src/app/models/IBook';
+import { BookService } from 'src/app/services/book.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -8,11 +10,24 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class AddedBookListComponent implements OnInit {
 
+  addedBooks: IBook[] = [];
+
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private bookService: BookService
   ) { }
 
   ngOnInit(): void {
+    const ids: number[] = this.userService.userInfo.addedBooks;
+    this.bookService.getBookByIds(ids).subscribe(
+      (books: IBook[]) => {
+        console.log(books);
+        this.addedBooks = books;
+      },
+      err => console.log(err)
+    );
   }
+
+  onBorrow(): void {}
 
 }

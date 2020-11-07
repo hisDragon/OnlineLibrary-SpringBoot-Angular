@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
   userId: number = this.userService.userInfo.userId;
   userAvatar: string = this.userService.userInfo.userAvatar;
 
+  addedBooks: number[] = this.userService.userInfo.addedBooks;
+
   borrowedBook: IBook = null;
 
   constructor(private userService : UserService, 

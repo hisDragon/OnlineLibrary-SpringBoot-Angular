@@ -22,6 +22,19 @@ export class BookService {
     return this.httpClient.get<IBook[]>(get_url);
   }
 
+  getBookByIds(ids: number[]): Observable<IBook[]> {
+    let getAllByIds_url: string = this._url + "ids?id=";
+    for(let i = 0; i < ids.length; ++i){
+      if(i == ids.length - 1) getAllByIds_url += ids[i].toString()
+      else{
+        getAllByIds_url += ids[i].toString()
+        getAllByIds_url += ","
+      }
+
+      return this.httpClient.get<IBook[]>(getAllByIds_url);
+    }
+  }
+
   getBooksByName(name: string): Observable<any>{
     let getByName_url = this._url + "name/" + name;
     return this.httpClient.get<IBook>(getByName_url);

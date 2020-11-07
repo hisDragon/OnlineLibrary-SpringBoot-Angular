@@ -50,7 +50,7 @@ public class BookController {
     }
 
     // get all by list of id
-    @GetMapping(path = "/users/ids")
+    @GetMapping(path = "/books/ids")
     @CrossOrigin
     public @ResponseBody List<Book> getAllByIds(@RequestParam(name = "id") List<Integer> ids){
         return this.bookService.getBooksByIds(ids);

@@ -79,7 +79,6 @@ export class AddBookComponent implements OnInit {
               this.userService.postUsers(userUpdate).subscribe(
                 (resUser: IUser) => {
                   this.userService.userInfo = resUser;
-                  console.log(resUser);
                   alert("Thank You!");
                 },
                 err => console.log(err)
