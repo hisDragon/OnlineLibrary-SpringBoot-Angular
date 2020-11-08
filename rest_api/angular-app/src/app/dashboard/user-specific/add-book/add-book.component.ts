@@ -48,6 +48,7 @@ export class AddBookComponent implements OnInit {
             bookPath: 'assets/books/categories/' + this.bookCategory + '/pdf/' + this.bookName + '.' + this.bookPdf.name.split('.').pop(),
             bookImagePath: 'assets/books/categories/' + this.bookCategory + '/img/' + this.bookName + '.' + this.bookImage.name.split('.').pop(),
             bookCategory: this.bookCategory,
+            isBookFree: false,
             authors: [
               { authorName: this.bookAuthor, authorId: 1, books: null }
             ]

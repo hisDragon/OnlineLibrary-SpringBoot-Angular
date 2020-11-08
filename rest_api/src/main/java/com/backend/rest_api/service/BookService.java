@@ -90,6 +90,8 @@ public class BookService implements IBookService {
             // but update existing values
             Book bookToUpdate = this.bookRepository.findById(book.getBookId()).get();
 
+            bookToUpdate.setIsBookFree(book.getIsBookFree());
+
             return this.bookRepository.save(bookToUpdate);
         }
         else if( !bookNamePresent && bookAuthorsListEmpty ){

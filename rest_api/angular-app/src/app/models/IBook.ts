@@ -6,6 +6,6 @@ export interface IBook{
     bookPath: string,
     bookImagePath: string,
     bookCategory: string,
-    borrowerId?: number,
+    isBookFree?: boolean,
     authors: IAuthor[]
 }

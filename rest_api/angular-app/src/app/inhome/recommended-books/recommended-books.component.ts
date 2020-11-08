@@ -11,27 +11,27 @@ export class RecommendedBooksComponent implements OnInit {
   
 
   books_details : any = [
-    { img_path : '../../../assets/forest.jpg', pdf_path:'../../assets/html5-cheatsheet.pdf'},
+    { img_path : '../../../assets/forest.png', pdf_path:'../../assets/dummy.pdf'},
     {
-      img_path : '../../../assets/forest.jpg', pdf_path:'../../assets/html5-cheatsheet.pdf'
+      img_path : '../../../assets/forest.png', pdf_path:'../../assets/dummy.pdf'
     },
     {
-      img_path : '../../../assets/forest.jpg', pdf_path:'../../assets/html5-cheatsheet.pdf'
+      img_path : '../../../assets/forest.png', pdf_path:'../../assets/dummy.pdf'
     },
     {
-      img_path : '../../../assets/forest.jpg', pdf_path:'../../assets/html5-cheatsheet.pdf'
+      img_path : '../../../assets/forest.png', pdf_path:'../../assets/dummy.pdf'
     },
     {
-      img_path : '../../../assets/forest.jpg', pdf_path:'../../assets/html5-cheatsheet.pdf'
+      img_path : '../../../assets/forest.png', pdf_path:'../../assets/dummy.pdf'
     },
     {
-      img_path : '../../../assets/forest.jpg', pdf_path:'../../assets/html5-cheatsheet.pdf'
+      img_path : '../../../assets/forest.png', pdf_path:'../../assets/dummy.pdf'
     },
     {
-      img_path : '../../../assets/forest.jpg', pdf_path:'../../assets/html5-cheatsheet.pdf'
+      img_path : '../../../assets/forest.png', pdf_path:'../../assets/dummy.pdf'
     },
     {
-      img_path : '../../../assets/forest.jpg', pdf_path:'../../assets/html5-cheatsheet.pdf'
+      img_path : '../../../assets/forest.png', pdf_path:'../../assets/dummy.pdf'
     }
 
   ];

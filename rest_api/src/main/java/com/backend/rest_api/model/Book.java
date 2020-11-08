@@ -23,6 +23,8 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 )
 public class Book {
     
+    private static final boolean FREE_BOOK_DEFAULT = true;
+
     @Id
     @Column(name = "bookId")
     private int bookId; // **7-DIGIT** PRIMARY KEY
@@ -44,6 +46,9 @@ public class Book {
                 inverseJoinColumns = { @JoinColumn(name = "authorId") }
             )
     private List<Author> authors = new ArrayList<>();
+
+    @Column(name = "isBookFree")
+    private boolean isBookFree = FREE_BOOK_DEFAULT;
 
     public Book() {} // default constructor
 
@@ -114,6 +119,12 @@ public class Book {
         this.authors = authors;
     }public List<Author> getAuthors(){
         return this.authors;
+    }
+
+    public void setIsBookFree(boolean isBookFree){
+        this.isBookFree = isBookFree;
+    }public boolean getIsBookFree(){
+        return this.isBookFree;
     }
     // SETTERS and GETTERS
 }
